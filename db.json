@@ -1,0 +1,36 @@
+{
+  "heroes": [
+    {
+      "name": "fsfs",
+      "description": "fsfsfsf",
+      "id": "pl3BQye"
+    },
+    {
+      "name": "dsds",
+      "description": "dsds",
+      "id": "GnlzLt4"
+    }
+  ],
+  "villains": [
+    {
+      "id": "VillainMadelyn",
+      "name": "Madelyn",
+      "description": "the cat whisperer"
+    },
+    {
+      "id": "VillainHaley",
+      "name": "Haley",
+      "description": "pen wielder"
+    },
+    {
+      "id": "VillainElla",
+      "name": "Ella",
+      "description": "fashionista"
+    },
+    {
+      "id": "VillainLandon",
+      "name": "Landon",
+      "description": "Mandalorian mauler"
+    }
+  ]
+}
