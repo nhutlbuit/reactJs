@@ -1,31 +1,19 @@
-# Tour of Heroes
+# Simple First Project ReactJs
 
 This project was created to help represent a fundamental app written with React. The heroes and villains theme is used throughout the app.
-
-by [John Papa](http://twitter.com/john_papa)
-
-Comparative apps can be found here with [Angular](https://github.com/johnpapa/heroes-angular), [Svelte](https://github.com/johnpapa/heroes-svelte), and [Vue](https://github.com/johnpapa/heroes-vue)
 
 ## Why
 
 I love JavaScript and the Web! One of the most common questions I hear is "which framework is best?". I like to flip this around and ask you "which is best for you?". The best way to know this is to try it for yourself. I'll follow up with some articles on my experiences with these frameworks but in the meantime, please try it for yourself to gain your own experience with each.
 
-## Live Demos
-
-Hosted in [Azure](https://azure.microsoft.com/en-us/free/?wt.mc_id=heroesreact-github-jopapa)
-
-- [Tour of Heroes with Angular](https://papa-heroes-angular.azurewebsites.net)
-- [Tour of Heroes with React](https://papa-heroes-react.azurewebsites.net)
-- Tour of Heroes with Svelte - coming soon!
-- [Tour of Heroes with Vue](https://papa-heroes-vue.azurewebsites.net)
 
 ## Getting Started
 
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/johnpapa/heroes-react.git
-   cd heroes-react
+   git clone https://github.com/nhutlbui/reactJs.git
+   cd reactJs
    ```
 
 1. Install the npm packages
@@ -104,12 +92,8 @@ The app uses a JSON server for a backend by default. This allows you to run the 
 
 ## Thank You
 
-Thank you to [Sarah Drasner](https://twitter.com/), [Brian Holt](https://twitter.com/), [Chris Noring](https://twitter.com/), [Craig Shoemaker](https://twitter.com/), and [Ward Bell](https://twitter.com/wardbell) for providing input and reviewing the code in some of the repos for the Angular, React, Svelte, and Vue apps:
-
-- [heroes-angular](https://github.com/johnpapa/heroes-angular)
-- [heroes-react](https://github.com/johnpapa/heroes-react)
-- [heroes-svelte](https://github.com/johnpapa/heroes-svelte)
-- [heroes-vue](https://github.com/johnpapa/heroes-vue)
+- [angular](https://github.com/nhutlbuit/trainingAngular)
+- [react](https://github.com/nhutlbuit/reactJs)
 
 ## Resources
 
