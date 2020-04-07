@@ -21,6 +21,7 @@ const Examples = withRouter(
 
 const Hook = withRouter(lazy(() => import('./examples/Hook')));
 const TodoList = withRouter(lazy(() => import('./examples/TodoList')));
+const Redux = withRouter(lazy(() => import('./examples/Redux')));
 
 class App extends Component {
   render() {
@@ -39,6 +40,7 @@ class App extends Component {
                 <Route path="/example" component={Examples} />
                 <Route path="/hook" component={Hook} />
                 <Route path="/todolist" component={TodoList} />
+                <Route path="/redux" component={Redux} />  
                 <Route exact path="**" component={NotFound} />
               </Switch>
             </Suspense>

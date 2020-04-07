@@ -75,7 +75,7 @@ function Heroes({ history }) {
   return (
     <div className="content-container">
       <ListHeader
-        title="Heroes"
+        title="Note"
         handleAdd={addNewHero}
         handleRefresh={handleRefresh}
         routePath="/heroes"

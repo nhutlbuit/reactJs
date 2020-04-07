@@ -8,7 +8,7 @@ Hook.propTypes = {
 function Hook() {
 
     // callback for initing userState first time.
-    const [color, setColor] = useState(()=> localStorage.getItem('box_color') || 'green'); 
+    const [color, setColor] = useState(() => localStorage.getItem('box_color') || 'green');
 
     function onClick() {
         const newColor = getRandomColor();
@@ -17,11 +17,7 @@ function Hook() {
     }
 
     return (
-        <div 
-        className="color-box" 
-        style={{backgroundColor: color }}
-        onClick ={onClick}
-         >
+        <div className="color-box" style={{ backgroundColor: color }} onClick={onClick} >
             Wellcome to React Hook useState!
         </div>
     );
@@ -29,8 +25,8 @@ function Hook() {
 }
 
 function getRandomColor() {
-    const COLOR_LIST = ['red', 'green','yellow', 'pink', 'blue'];
-    const randomIndex = Math.trunc(Math.random()*5);
+    const COLOR_LIST = ['red', 'green', 'yellow', 'pink', 'blue'];
+    const randomIndex = Math.trunc(Math.random() * 5);
     return COLOR_LIST[randomIndex]
 }
 

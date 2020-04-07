@@ -1,32 +1,23 @@
 import React, { useState } from 'react';
 
 function Example() {
-  let [a, b] = useState(0);
+  let [a, setA] = useState(0);
+  let [b, setB] = useState(0);
   let [sum, setSum] = useState(0);
-  let [counter, setCount] = useState(0);
-  function getText() {
-      sum = parseInt(a) + parseInt(b);
-    //  this.setState({sum});
-  }
-
-  const calCounter = () => setCount(counter + 1);
-  const sum2number = () => {
-    sum = parseInt(a) + parseInt(b);
-    setSum(sum);
-  };
-
+  let [counter, setCount] = useState(1);
+  
   return (
     <div>
-        <h1>Hello world</h1>
-        <button onClick={sum2number}>Click Me</button>
-        <input type="number" defaultValue={a}/>
-        <input type="number" defaultValue={b}/>
-        {sum}
-        <button onClick={calCounter}>Counter: {counter}</button>
+      <h1>Sum 2 numbers</h1>
+      <button onClick={()=>setSum(parseInt(a) + parseInt(b))}>Sum</button>
+      <input type="number" onChange={(e)=> setA(e.target.value)} />
+      <input type="number" onChange={(e)=> setB(e.target.value)} />
+      Result: {sum}
+      <br/>
+      <br/>
+      <button onClick={()=> setCount(++counter)}>Counter: {counter}</button>
     </div>
-
-);
-
+  );
 }
 
 export default Example;

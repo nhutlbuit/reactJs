@@ -7,7 +7,8 @@ function TodoList() {
         [
             { id: 1, title: 'one' },
             { id: 2, title: 'two' },
-            { id: 3, title: 'three' }
+            { id: 3, title: 'three' },
+            { id: 4, title: 'four' }
         ], null
     );
 
@@ -38,7 +39,6 @@ function TodoList() {
             </ul>
         </div>
     );
-
 }
 
 export default TodoList;
