@@ -92,8 +92,8 @@ The app uses a JSON server for a backend by default. This allows you to run the 
 
 ## Thank You
 
-- [angular](https://github.com/nhutlbuit/trainingAngular)
-- [react](https://github.com/nhutlbuit/reactJs)
+- [Angular](https://github.com/nhutlbuit/trainingAngular)
+- [ReactJs](https://github.com/nhutlbuit/reactJs)
 
 ## Resources
 
