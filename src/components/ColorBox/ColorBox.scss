@@ -1,35 +1,52 @@
 .color-box {
-    $box-size: 200px;
-    display: inline-block;
-    width: $box-size;
-    height: $box-size;
-    border-radius: 8px;
-    transition: all 0.35s ease-in-out 0s;
-    text-align: center;
-    cursor: pointer;
+  $box-size: 200px;
+  display: inline-block;
+  width: $box-size;
+  height: $box-size;
+  border-radius: 8px;
+  transition: all 0.35s ease-in-out 0s;
+  text-align: center;
+  cursor: pointer;
 }
 
 .todo-list {
-    color: red;
-    cursor: pointer;
+  color: red;
+  cursor: pointer;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even){background-color: #f2f2f2}
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 
-  .dash-board{
-      font-weight: bold;
-      font-size: 40px;
-      padding-bottom: 10px;
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+.dash-board{
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.select {
+  width: 80px;
+}
+
+.use-icon {
+  border: none;
+  background: none;
+  border: none !important;
+  color: #888;
+  cursor: pointer;
+  font-size:18px;
+  :hover {
+    color: #00b3e6;
   }
+}
+

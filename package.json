@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "quick": "concurrently \"npm run backend\" \"npm start\"" ,
+    "quick": "concurrently \"npm run backend\" \"npm start\"",
     "cypress": "npx cypress open",
     "e2e": "concurrently \"npm run quick\" \"npm run cypress\"",
     "backend": "json-server --watch db.json --routes routes.json --port 8627 --middlewares ./node_modules/json-server-reset"
@@ -23,17 +23,18 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:8083",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.4.1",
     "axios": "^0.19.0",
     "bulma": "^0.8.0",
+    "http-proxy-middleware": "^1.0.3",
     "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.3.0",
+    "react-select": "^3.1.0",
     "redux": "^4.0.4",
     "redux-saga": "^1.0.5",
     "redux-thunk": "^2.3.0"
