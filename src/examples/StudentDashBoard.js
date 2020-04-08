@@ -20,6 +20,7 @@ function StudentDashBoard() {
 
   return (
     <div >
+      <h1 className="dash-board">Dash Board</h1>
       <table>
         <thead>
           <tr>
@@ -29,7 +30,7 @@ function StudentDashBoard() {
             <th>Date Of Birth</th>
             <th>Phone</th>
             <th>Address</th>
-            <th>Action</th>
+            <th>+</th>
           </tr>
         </thead>
         <tbody>
@@ -39,8 +40,12 @@ function StudentDashBoard() {
               <td colspan="3"> {st.fullName}</td>
               <td> {st.trainingClass ? st.trainingClass.className : ''}</td>
               <td>{st.dateOfBirth}</td>
-              <td>{st.dateOfBirth}</td>
               <td>{st.phoneNumber}</td>
+              <td>{st.address}</td>
+              <td>
+                <button>Edit</button>
+                <button>Delect</button>
+              </td>
             </tr>
           ))}
         </tbody>
