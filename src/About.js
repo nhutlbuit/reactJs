@@ -9,8 +9,8 @@ const About = () => (
         with React. The heroes and villains theme is used throughout the app.
       </p>
       <p>
-        by
-        <a href="http://twitter.com/john_papa">John Papa</a>
+        by 
+        <a href="https://github.com/nhutlbuit"> Nhut Le</a>
       </p>
       <br />
       <h2 className="title">Why</h2>
@@ -26,41 +26,13 @@ const About = () => (
       <h2 className="title">Comparative Apps</h2>
       <ul>
         <li>
-          <a href="https://github.com/johnpapa/heroes-angular">
-            github.com/johnpapa/heroes-angular
+          <a href="https://github.com/nhutlbuit/trainingAngular">
+           Angular
           </a>
         </li>
         <li>
-          <a href="https://github.com/johnpapa/heroes-react">
-            github.com/johnpapa/heroes-react
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/johnpapa/heroes-vue">
-            github.com/johnpapa/heroes-vue
-          </a>
-        </li>
-      </ul>
-      <br />
-      <h2 className="title">Live Demos</h2>
-      <p>
-        Hosted in
-        <a href="https://aka.ms/jp-free">Azure</a>
-      </p>
-      <ul>
-        <li>
-          <a href="https://papa-heroes-angular.azurewebsites.net">
-            Tour of Heroes with Angular
-          </a>
-        </li>
-        <li>
-          <a href="https://papa-heroes-react.azurewebsites.net">
-            Tour of Heroes with React
-          </a>
-        </li>
-        <li>
-          <a href="https://papa-heroes-vue.azurewebsites.net">
-            Tour of Heroes with Vue
+          <a href="https://github.com/nhutlbuit/reactJs">
+            ReactJs
           </a>
         </li>
       </ul>

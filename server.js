@@ -4,6 +4,7 @@ const port = process.env.PORT || 4200;
 const publicweb = process.env.PUBLICWEB || './public';
 
 const captains = console;
+app.set('port', 3031);
 
 const start = () => {
   app.use(express.static(publicweb));
