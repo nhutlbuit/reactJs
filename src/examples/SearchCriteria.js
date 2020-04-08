@@ -14,21 +14,29 @@ function SearchCriteria(props) {
             return;
         }
 
-        if(typingTimeOutRef.current) {
+        if (typingTimeOutRef.current) {
             clearTimeout(typingTimeOutRef.current);
         }
 
         typingTimeOutRef.current = setTimeout(() => {
             onSubmit(valueTemp);
-        }, 400);  
+        }, 400);
+    }
+
+    function clearSearchValue() {
+        onSubmit('');
+        setSearchValue('');
     }
 
     return (
         <div>
-            Search criteria:
+            <div className="bold-text">Search criteria:</div>
             <form>
-                <input type="text" value={searchValue} onChange={handleSearchValueOnChange}>
+                <input className="text-box" type="text" value={searchValue} onChange={handleSearchValueOnChange}>
                 </input>
+                <button className="use-icon" onClick={clearSearchValue}>
+                    <i className="fas fa-times"/>
+                </button>
             </form>
         </div>
     );

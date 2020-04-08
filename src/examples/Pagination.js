@@ -27,12 +27,11 @@ function Pagination(props) {
 
     return (
         <div>
-             <Select options={options} onChange={onChangePageSize} className="select" />
-            <button disabled={pagination.number === 0} onClick={() => handlePageChange(0)}>First</button>
-            <button disabled={pagination.number === 0} onClick={() => handlePageChange(pagination.number - 1)}>Previous</button>
-            <button disabled={pagination.number === pagination.totalPages - 1} onClick={() => handlePageChange(pagination.number + 1)}>Next</button>
-            <button disabled={pagination.number === pagination.totalPages - 1} onClick={() => handlePageChange(pagination.totalPages - 1)}>Last</button>
-            totalPages: {pagination.totalPages}
+            <Select options={options} onChange={onChangePageSize} className="select" defaultValue={options[0]}/>
+            <button className="btn-paginate" disabled={pagination.number === 0} onClick={() => handlePageChange(0)}>First</button>
+            <button className="btn-paginate" disabled={pagination.number === 0} onClick={() => handlePageChange(pagination.number - 1)}>Previous</button>
+            <button className="btn-paginate" disabled={pagination.number === pagination.totalPages - 1} onClick={() => handlePageChange(pagination.number + 1)}>Next</button>
+            <button className="btn-paginate" disabled={pagination.number === pagination.totalPages - 1} onClick={() => handlePageChange(pagination.totalPages - 1)}>Last</button>
         </div>
     );
 

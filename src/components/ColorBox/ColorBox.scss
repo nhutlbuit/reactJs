@@ -39,14 +39,48 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .use-icon {
-  border: none;
   background: none;
   border: none !important;
-  color: #888;
+  color: #00b3e6;;
   cursor: pointer;
   font-size:18px;
-  :hover {
-    color: #00b3e6;
+  :active {
+    border: none !important;
+    border-color: white;
   }
+}
+
+.use-icon-delete {
+  background: none;
+  border: none !important;
+  color: rgb(255, 110, 64);
+  cursor: pointer;
+  font-size:18px;
+  :active {
+    border: none !important;
+    border-color: white;
+  }
+}
+
+.text-box {
+  padding: 5px;
+  margin: 2px;
+  width: 200px;
+  height: 30px;
+  border-style: outset;
+  border-width: 1.5px;
+  font-size: small;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.btn-paginate {
+  width: 70px;
+  height: 38px;
+  font-size: small;
+  cursor: pointer;
 }
 

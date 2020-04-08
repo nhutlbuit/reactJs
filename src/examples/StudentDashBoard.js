@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import '../components/ColorBox/ColorBox.scss';
 import Pagination from './Pagination';
 import SearchCriteria from './SearchCriteria';
+import { ModalYesNo } from '../components';
+import axios from 'axios';
 
 function StudentDashBoard() {
   const [students, setStudents] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [studentToDelete, setStudentToDelete] = useState(null);
   const page = {
     number: 0,
     totalElements: 5,
@@ -53,6 +57,36 @@ function StudentDashBoard() {
     })
   }
 
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  function handleDeleteFromModal() {
+    handleCloseModal();
+    handleDeleteStudent();
+  }
+
+  function deleteStudent(student) {
+    setShowModal(true);
+    setStudentToDelete(student);
+  }
+
+  async function handleDeleteStudent() {
+    try {
+      const url = `/trainingApi/students/${studentToDelete.id}`;
+      const response = await axios.delete(url);
+      if (response.status === 204) {
+        alert(`Deleted student ${studentToDelete.fullName} successfully!`)
+        setFilter({
+          ...filter,
+          number: 0
+        })
+      }
+      } catch (error) {
+        console.log('Failed to fetch data');
+      }
+  }
+
   return (
     <div >
       <h1 className="dash-board">Dash Board</h1>
@@ -82,7 +116,7 @@ function StudentDashBoard() {
               <td>{st.phoneNumber}</td>
               <td>{st.address}</td>
               <td>
-                <button className="use-icon">
+                <button onClick={()=> deleteStudent(st)} className="use-icon-delete">
                   <i className="fas fa-trash" />
                 </button>
                 <button className="use-icon">
@@ -94,6 +128,13 @@ function StudentDashBoard() {
         </tbody>
       </table>
       <Pagination pagination={pagination} onPageChange={handlePageChange} onPageSizeChange={handlePageSizeChange} />
+      {showModal && (
+        <ModalYesNo
+          message={`Would you like to delete ${studentToDelete.fullName}?`}
+          onNo={handleCloseModal}
+          onYes={handleDeleteFromModal}
+        />
+      )}
     </div>
   );
 }
