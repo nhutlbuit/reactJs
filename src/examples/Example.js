@@ -21,9 +21,3 @@ function Example() {
 }
 
 export default Example;
-
-
-// findByUserNameContaining(name: string, page: number, size: number) {
-//   const url = this.ROOT_URL + `/trainingApi/students/search/likeName?name=${name}&page=${page}&size=${size}&projection=InlineStudent`;
-//   return this.httpClient.get(url);
-// }

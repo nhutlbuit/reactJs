@@ -20,9 +20,9 @@ const Examples = withRouter(
 );
 
 const Hook = withRouter(lazy(() => import('./examples/Hook')));
-const TodoList = withRouter(lazy(() => import('./examples/TodoList')));
+const TodoList = withRouter(lazy(() => import('./components/todo/TodoList')));
 const Redux = withRouter(lazy(() => import('./examples/Redux')));
-const StudentDashBoard = withRouter(lazy(() => import('./examples/StudentDashBoard')));
+const StudentDashBoard = withRouter(lazy(() => import('./components/student/StudentDashBoard')));
 
 class App extends Component {
   render() {

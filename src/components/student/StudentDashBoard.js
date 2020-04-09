@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../components/ColorBox/ColorBox.scss';
 import Pagination from './Pagination';
 import SearchCriteria from './SearchCriteria';
-import { ModalYesNo } from '../components';
+import { ModalYesNo } from '..';
 import axios from 'axios';
 
 function StudentDashBoard() {
@@ -80,10 +79,10 @@ function StudentDashBoard() {
         setFilter({
           ...filter,
           number: 0
-        })
+        });
       }
       } catch (error) {
-        console.log('Failed to fetch data');
+        console.log(`Failed to delete student ${studentToDelete.fullName}`);
       }
   }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components/ColorBox/ColorBox.scss';
 import Select from 'react-select'
 
 function Pagination(props) {

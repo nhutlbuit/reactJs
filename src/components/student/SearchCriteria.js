@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import '../components/ColorBox/ColorBox.scss';
 
 function SearchCriteria(props) {
     const [searchValue, setSearchValue] = useState('');

@@ -1,5 +1,4 @@
-import React, { useState, useRef } from 'react';
-import '../components/ColorBox/ColorBox.scss';
+import React, { useState } from 'react';
 
 function DeleteStudent(props) {
     const [searchValue, setSearchValue] = useState('');

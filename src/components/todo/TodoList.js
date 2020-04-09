@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../components/ColorBox/ColorBox.scss';
 import TodoForm from './TodoForm';
 
 function TodoList() {
