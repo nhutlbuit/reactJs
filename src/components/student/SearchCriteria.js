@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 
 function SearchCriteria(props) {
     const [searchValue, setSearchValue] = useState('');
     const { onSubmit } = props;
-    // created object, value is not change beetween render times
+    // created object, value is not change between render times
+    // gits sync by id : fb6246754b32beaad4979e6fbfe7c943
     const typingTimeOutRef = useRef(null);
 
     function handleSearchValueOnChange(e) {
@@ -22,10 +23,10 @@ function SearchCriteria(props) {
         }, 400);
     }
 
-    function clearSearchValue() {
+    const clearSearchValue = useCallback((type) => {
         onSubmit('');
         setSearchValue('');
-    }
+    },[])
 
     return (
         <div>

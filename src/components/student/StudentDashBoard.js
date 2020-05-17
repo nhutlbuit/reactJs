@@ -49,6 +49,7 @@ function StudentDashBoard() {
   }
 
   function handleFilterChange(name) {
+    if (name === filter.searchName) return;
     setFilter({
       ...filter,
       searchName: name,
@@ -81,9 +82,9 @@ function StudentDashBoard() {
           number: 0
         });
       }
-      } catch (error) {
-        console.log(`Failed to delete student ${studentToDelete.fullName}`);
-      }
+    } catch (error) {
+      console.log(`Failed to delete student ${studentToDelete.fullName}`);
+    }
   }
 
   return (
@@ -115,10 +116,10 @@ function StudentDashBoard() {
               <td>{st.phoneNumber}</td>
               <td>{st.address}</td>
               <td>
-                <button onClick={()=> deleteStudent(st)} className="use-icon-delete">
+                <button onClick={() => deleteStudent(st)} className="use-icon-delete">
                   <i className="fas fa-trash" />
                 </button>
-                <button className="use-icon">
+                <button className="use-icon" >
                   <i className="fas fa-edit" />
                 </button>
               </td>
