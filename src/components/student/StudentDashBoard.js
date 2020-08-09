@@ -4,7 +4,7 @@ import SearchCriteria from './SearchCriteria';
 import { ModalYesNo } from '..';
 import axios from 'axios';
 
-function StudentDashBoard() {
+function StudentDashBoard(props) {
   const [students, setStudents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [studentToDelete, setStudentToDelete] = useState(null);
@@ -17,6 +17,9 @@ function StudentDashBoard() {
   };
   const [filter, setFilter] = useState(page);
   const [pagination, setPagination] = useState(page);
+
+
+  const { editStudent, addNewStudent } = props;
 
   useEffect(() => {
     async function fetchStudents() {
@@ -101,9 +104,10 @@ function StudentDashBoard() {
             <th>Phone</th>
             <th>Address</th>
             <th>
-              <button className="use-icon">
+              <button className="use-icon" onClick={() => { {addNewStudent()} }}>
                 <i className="fas fa-plus" />
-              </button></th>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -119,7 +123,7 @@ function StudentDashBoard() {
                 <button onClick={() => deleteStudent(st)} className="use-icon-delete">
                   <i className="fas fa-trash" />
                 </button>
-                <button className="use-icon" >
+                <button className="use-icon" onClick={() => {editStudent(st)}}>
                   <i className="fas fa-edit" />
                 </button>
               </td>
@@ -135,6 +139,7 @@ function StudentDashBoard() {
           onYes={handleDeleteFromModal}
         />
       )}
+
     </div>
   );
 }

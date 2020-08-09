@@ -26,6 +26,9 @@ const NavBar = props => (
       <NavLink to="/student-dash-board" activeClassName="active-link">
         Student Dash Board
       </NavLink>
+      <NavLink to="/student" activeClassName="active-link">
+        Student
+      </NavLink>
       <NavLink to="/about" activeClassName="active-link">
         About
       </NavLink>
