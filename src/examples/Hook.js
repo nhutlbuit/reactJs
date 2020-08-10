@@ -6,7 +6,7 @@ Hook.propTypes = {
 
 function Hook() {
 
-    // callback for initing userState first time.
+    // callback for init userState first time.
     const [color, setColor] = useState(() => localStorage.getItem('box_color') || 'green');
 
     function onClick() {

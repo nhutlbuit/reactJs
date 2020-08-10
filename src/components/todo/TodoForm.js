@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function TodoForm(props) {
-    // alt+shift+o to remove abandant import;
+    // alt+shift+o to remove abundant import;
     const [value, setValue] = useState('');
     const {onSubmit} = props;
 

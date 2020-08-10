@@ -19,6 +19,11 @@ export const SELECT_HERO = '[Hero] SELECT_HERO';
 export const selectHeroAction = hero => ({ type: SELECT_HERO, payload: hero });
 export const loadHeroesAction = () => ({ type: LOAD_HERO });
 
-export const updateHeroAction = hero => ({ type: UPDATE_HERO, payload: hero });
+export function updateHeroAction(hero) {
+   return { 
+       type: UPDATE_HERO,
+       payload: hero 
+    };
+}
 export const deleteHeroAction = hero => ({ type: DELETE_HERO, payload: hero });
 export const addHeroAction = hero => ({ type: ADD_HERO, payload: hero });

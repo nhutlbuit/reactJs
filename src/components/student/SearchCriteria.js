@@ -4,7 +4,6 @@ function SearchCriteria(props) {
     const [searchValue, setSearchValue] = useState('');
     const { onSubmit } = props;
     // created object, value is not change between render times
-    // gits sync by id : fb6246754b32beaad4979e6fbfe7c943
     const typingTimeOutRef = useRef(null);
 
     function handleSearchValueOnChange(e) {

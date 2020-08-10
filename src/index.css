@@ -53,6 +53,10 @@ tr:nth-child(even){background-color: #f2f2f2}
   width: 80px;
 }
 
+.selectClassCode {
+  width: 200px;
+}
+
 .use-icon {
   background: none;
   border: none !important;

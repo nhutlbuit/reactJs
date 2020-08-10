@@ -1,11 +1,6 @@
 {
   "heroes": [
     {
-      "name": "Ngô Tấn Đạt",
-      "description": "Tình Em bán chiếu",
-      "id": 1
-    },
-    {
       "name": "Nguyễn Hoàng Vĩnh Linh",
       "description": "Trùm BDS",
       "id": 2
