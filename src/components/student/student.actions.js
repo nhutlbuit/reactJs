@@ -1,4 +1,5 @@
 export const LOAD_STUDENT = '[Students] LOAD_STUDENT';
+export const LOAD_STUDENT_PAGING = '[Students] LOAD_STUDENT_PAGING';
 export const LOAD_STUDENT_SUCCESS = '[Students] LOAD_STUDENT_SUCCESS';
 export const LOAD_STUDENT_ERROR = '[Students] LOAD_STUDENT_ERROR';
 
@@ -25,5 +26,6 @@ export function updateStudentAction(student) {
        payload: student 
     };
 }
+
 export const deleteStudentAction = student => ({ type: DELETE_STUDENT, payload: student });
 export const addStudentAction = student => ({ type: ADD_STUDENT, payload: student });

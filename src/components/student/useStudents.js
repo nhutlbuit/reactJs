@@ -8,16 +8,17 @@ function useStudents() {
 
   return {
     // Selectors
-    studentList1: useSelector(state => console.log(state.students)),
-    studentList: useSelector(state => state.students.data),
-    selectedStudent: useSelector(state => state.selectedStudent),
+    // studentList1: useSelector(state => console.log(state)),
+    students: useSelector(state => state.students.data),
+  //  selectedStudent: useSelector(state => state.selectedStudent),
+    pagination: useSelector(state => state.students.page),
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()
     addStudent: student => dispatch(addStudentAction(student)),
     deleteStudent: student => dispatch(deleteStudentAction(student)),
     getStudents: useCallback((filter) => dispatch(loadStudentsAction(filter)), [dispatch]), // called within a useEffect()
-    selectStudent: student => dispatch(selectStudentsAction(student)),
+  //  selectStudent: student => dispatch(selectStudentsAction(student)),
     updateStudent: student => dispatch(updateStudentAction(student))
   };
 }

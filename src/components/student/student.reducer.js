@@ -1,18 +1,19 @@
 import { LOAD_STUDENT, ADD_STUDENT_ERROR, ADD_STUDENT_SUCCESS, ADD_STUDENT, DELETE_STUDENT_SUCCESS, DELETE_STUDENT, UPDATE_STUDENT_ERROR, 
-  UPDATE_STUDENT_SUCCESS, UPDATE_STUDENT, LOAD_STUDENT_ERROR, LOAD_STUDENT_SUCCESS, SELECT_STUDENT, DELETE_STUDENT_ERROR } from './student.actions';
+  UPDATE_STUDENT_SUCCESS, UPDATE_STUDENT, LOAD_STUDENT_ERROR, LOAD_STUDENT_SUCCESS, SELECT_STUDENT, DELETE_STUDENT_ERROR, LOAD_STUDENT_PAGING } from './student.actions';
 
 let initState = {
   loading: false,
   data: [],
-  error: void 0
-};
+  error: void 0,
+  page : 1
+};// thi de page vao day thoi :))
 
 export const studentsReducer = (state = initState, action) => {
   switch (action.type) {
     case LOAD_STUDENT:
       return { ...state, loading: false, error: ''};
     case LOAD_STUDENT_SUCCESS:
-      return { ...state, loading: false, data: [...action.payload] };
+      return { ...state, loading: false, data: [...action.payload] , pagination : state.pagination+1};
     case LOAD_STUDENT_ERROR:
       return { ...state, loading: false, error: action.payload };
 
@@ -66,6 +67,11 @@ export const studentsReducer = (state = initState, action) => {
 
     case ADD_STUDENT_ERROR: {
       return { ...state, loading: false };
+    }
+
+    case LOAD_STUDENT_PAGING: {
+      const {page} = action.payload;
+      return { ...state, page };
     }
 
     default:

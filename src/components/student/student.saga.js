@@ -1,15 +1,17 @@
 import { put, takeEvery, call, all } from 'redux-saga/effects';
 import { loadStudentsApi, updateStudentApi, addStudentApi, deleteStudentApi } from './student.api';
 import { LOAD_STUDENT_SUCCESS, LOAD_STUDENT_ERROR, LOAD_STUDENT, UPDATE_STUDENT_SUCCESS, UPDATE_STUDENT_ERROR, ADD_STUDENT, ADD_STUDENT_SUCCESS,
-  ADD_STUDENT_ERROR, DELETE_STUDENT_ERROR, DELETE_STUDENT_SUCCESS, DELETE_STUDENT, UPDATE_STUDENT } from './student.actions';
+  ADD_STUDENT_ERROR, DELETE_STUDENT_ERROR, DELETE_STUDENT_SUCCESS, DELETE_STUDENT, UPDATE_STUDENT, LOAD_STUDENT_PAGING } from './student.actions';
 
 // Our worker Saga: will perform the async increment task
 export function* loadingStudentsAsync({payload}) {
+ 
   try {
     const data = yield call(loadStudentsApi, payload);
-    const students = [...data];
-
+    const students = [...data._embedded.students];
+    const paging = { page : data.page };
     yield put({ type: LOAD_STUDENT_SUCCESS, payload: students });
+    yield put({ type : LOAD_STUDENT_PAGING, payload: paging })
   } catch (err) {
     yield put({ type: LOAD_STUDENT_ERROR, payload: err.message });
   }

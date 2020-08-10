@@ -4,6 +4,7 @@ import Axios from 'axios';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import useStudents from './useStudents';
 
 function StudentDetail(props) {
 
@@ -14,6 +15,7 @@ function StudentDetail(props) {
   const [classCodeList, setClassCodeList] = useState([]);
   const [selectedClass, setSelectedClass] = useState();
   const [dob, setDob] = useState(new Date());
+  const { updateStudent, addStudent } = useStudents();
 
   useEffect(() => {
     fetchClassCodeList();
@@ -56,19 +58,23 @@ function StudentDetail(props) {
   }
 
   async function createStudent(stu) {
-    try {
-      const url = `/trainingApi/students`;
-      const response = await Axios.post(url, stu);
-      if (response.status === 201) {
-        alert('Save Successfully!');
-        history.push('/student');
-      }
-    } catch (error) {
-      alert(`Failed to save student ${stu.firstName}`);
-    }
+    // try {
+    //   const url = `/trainingApi/students`;
+    //   const response = await Axios.post(url, stu);
+    //   if (response.status === 201) {
+    //     alert('Save Successfully!');
+    //     history.push('/student');
+    //   }
+    // } catch (error) {
+    //   alert(`Failed to save student ${stu.firstName}`);
+    // }
+
+    addStudent(stu);
+    alert('Save Successfully!');
+    history.push('/student');
   }
 
-  async function updatedStudent(stu) {
+  async function updatedStudent1(stu) {
     const data = {};
     data['id'] = stu.id;
     data['classCode'] = stu.classCode;
@@ -80,23 +86,26 @@ function StudentDetail(props) {
     data['studentCode'] = stu.studentCode;
     data['address'] = stu.address;
 
-    try {
-      const url = `/trainingApi/students/${data.id}`;
-      const response = await Axios.patch(url, data);
-      if (response.status === 200) {
-        alert('Save Successfully!');
-        history.push('/student');
-      }
-    } catch (error) {
-      alert(`Failed to save student ${stu.firstName}`);
-    }
+    // try {
+    //   const url = `/trainingApi/students/${data.id}`;
+    //   const response = await Axios.patch(url, data);
+    //   if (response.status === 200) {
+    //     alert('Save Successfully!');
+    //     history.push('/student');
+    //   }
+    // } catch (error) {
+    //   alert(`Failed to save student ${stu.firstName}`);
+    // }
+    updateStudent(data);
+    alert('Save Successfully!');
+    history.push('/student');
   }
 
   function save(e) {
     if (isCreate) {
       createStudent(e);
     } else {
-      updatedStudent(e);
+      updatedStudent1(e);
     }
   }
 
