@@ -8,6 +8,7 @@ function useStudents() {
 
   return {
     // Selectors
+    studentList1: useSelector(state => console.log(state.students)),
     studentList: useSelector(state => state.students.data),
     selectedStudent: useSelector(state => state.selectedStudent),
 
