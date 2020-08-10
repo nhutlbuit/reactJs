@@ -113,22 +113,10 @@ function StudentDetail(props) {
     setSt({...st, 'dateOfBirth': date});
   }
 
-  const options = [
-    { value: 5, label: '5' },
-    { value: 10, label: '10' },
-    { value: 15, label: '15' },
-    { value: 20, label: '20' },
-    { value: 50, label: '50' },
-    { value: 100, label: '100' },
-];
-
-
   return (
     <div>
        <h1 className="dash-board">{student ? 'Edit Student' : 'Add New Student' }</h1>
        <div className="field">
-
-       <Select options={options}  className="select" defaultValue={options[0]}/>
 
           <label className="label" htmlFor="stCode">Student Code</label>
           <input name = "studentCode" className="input" type="text" defaultValue={st?.studentCode} placeholder= 'Student Code' onChange={handleStudentChange} />

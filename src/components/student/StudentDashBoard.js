@@ -3,6 +3,8 @@ import Pagination from './Pagination';
 import SearchCriteria from './SearchCriteria';
 import { ModalYesNo } from '..';
 import axios from 'axios';
+import useStudents from './useStudents';
+
 
 function StudentDashBoard(props) {
   const [students, setStudents] = useState([]);
@@ -18,8 +20,19 @@ function StudentDashBoard(props) {
   const [filter, setFilter] = useState(page);
   const [pagination, setPagination] = useState(page);
 
-
   const { editStudent, addNewStudent } = props;
+  
+  const {
+    getStudents,
+    studentList,
+    selectedStudent
+  } = useStudents();
+
+  useEffect(() => {
+    const response = getStudents(filter);
+    console.log(JSON.stringify(studentList));
+    console.log(JSON.stringify(selectedStudent));
+  }, [getStudents, filter]);
 
   useEffect(() => {
     async function fetchStudents() {

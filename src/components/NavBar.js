@@ -23,9 +23,6 @@ const NavBar = props => (
       <NavLink to="/redux" activeClassName="active-link">
         Redux Hooks
       </NavLink>
-      <NavLink to="/student-dash-board" activeClassName="active-link">
-        Student Dash Board
-      </NavLink>
       <NavLink to="/student" activeClassName="active-link">
         Student
       </NavLink>

@@ -1,11 +1,6 @@
 {
   "heroes": [
     {
-      "name": "Nguyễn Hoàng Vĩnh Linh",
-      "description": "Trùm BDS",
-      "id": 2
-    },
-    {
       "name": "Lý Văn Vũ",
       "description": "3 vợ 4 thiếp",
       "id": 3
@@ -19,6 +14,11 @@
       "name": "Từ Đạt",
       "description": "Cái Thế Ma Vương",
       "id": 5
+    },
+    {
+      "name": "fsfs",
+      "description": "fsfsf",
+      "id": 7
     }
   ],
   "villains": [
