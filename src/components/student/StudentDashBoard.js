@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination';
 import SearchCriteria from './SearchCriteria';
 import { ModalYesNo } from '..';
+import useStudents from './useStudents';
 
 function StudentDashBoard(props) {
   const { editStudent, addNewStudent } = props;
@@ -18,11 +19,15 @@ function StudentDashBoard(props) {
   };
   const [filter, setFilter] = useState(page);
   
-  const { getStudents, students, pagination, deleteStudent } = useStudents();
+  const { getStudents, students, pagination, deleteStudent, getStudentsError } = useStudents();
 
   useEffect(() => {
    getStudents(filter);
   },[filter]);
+
+  if (getStudentsError) {
+    alert('Failed to fetch data');
+  }
 
   /* 
   useEffect(() => {
@@ -39,7 +44,7 @@ function StudentDashBoard(props) {
       }
     }
     fetchStudents();
-  }, [filter]);// ah nay gio dang chay cai nay ah :))
+  }, [filter]);
 */
 
   function handlePageChange(newPageNumber) {

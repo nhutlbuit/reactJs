@@ -12,6 +12,7 @@ function useStudents() {
     students: useSelector(state => state.students.data),
   //  selectedStudent: useSelector(state => state.selectedStudent),
     pagination: useSelector(state => state.students.page),
+    getStudentsError: useSelector(state => state.students.error),
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()
