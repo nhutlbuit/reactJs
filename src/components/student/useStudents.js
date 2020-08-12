@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectStudentsAction, loadStudentsAction, deleteStudentAction, addStudentAction, updateStudentAction } from './student.actions';
+import { loadStudentsAction, deleteStudentAction, addStudentAction, updateStudentAction } from './student.actions';
 
 /** Custom hook for accessing Student state in redux store */
 function useStudents() {
@@ -8,11 +8,15 @@ function useStudents() {
 
   return {
     // Selectors
-    // studentList1: useSelector(state => console.log(state)),
+  //   studentList1: useSelector(state => console.log(' state.students.updateError', state.students.updateError)),
     students: useSelector(state => state.students.data),
   //  selectedStudent: useSelector(state => state.selectedStudent),
     pagination: useSelector(state => state.students.page),
     getStudentsError: useSelector(state => state.students.error),
+    updateStudentsError: useSelector(state => state.students.updateError),
+    updateStudentsSuccess: useSelector(state => state.students.updateError),
+    createStudentsError: useSelector(state => state.students.createError),
+    
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()

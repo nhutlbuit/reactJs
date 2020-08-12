@@ -23,8 +23,6 @@ function Heroes({ history }) {
 
   useEffect(() => {
     getHeroes();
-    console.log(heroes);
-    console.log(selectedHero);
   }, [getHeroes]);
 
   function addNewHero() {

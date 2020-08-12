@@ -30,7 +30,7 @@ export const studentsReducer = (state = initState, action) => {
     case UPDATE_STUDENT_SUCCESS:
       return modifyStudentState(state, action.payload);
     case UPDATE_STUDENT_ERROR:
-      return { ...state, loading: false, error: action.payload };
+      return { ...state, loading: false, updateError: action.payload };
 
     case DELETE_STUDENT: {
       return {

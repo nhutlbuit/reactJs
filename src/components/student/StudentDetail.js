@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import Axios from 'axios';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -15,7 +14,7 @@ function StudentDetail(props) {
   const [classCodeList, setClassCodeList] = useState([]);
   const [selectedClass, setSelectedClass] = useState();
   const [dob, setDob] = useState(new Date());
-  const { updateStudent, addStudent } = useStudents();
+  const { updateStudent, addStudent, updateStudentsError, createStudentsError } = useStudents();
 
   useEffect(() => {
     fetchClassCodeList();
@@ -53,31 +52,32 @@ function StudentDetail(props) {
     }
   }
 
-  function handleStudentChange(e) {
-    setSt({...st, [e.target.name]: e.target.value});
-  }
-
   async function createStudent(stu) {
-    // try {
-    //   const url = `/trainingApi/students`;
-    //   const response = await Axios.post(url, stu);
-    //   if (response.status === 201) {
-    //     alert('Save Successfully!');
-    //     history.push('/student');
-    //   }
-    // } catch (error) {
-    //   alert(`Failed to save student ${stu.firstName}`);
-    // }
-
-    addStudent(stu);
-    alert('Save Successfully!');
-    history.push('/student');
+  /*  try {
+      const url = `/trainingApi/students`;
+      const response = await Axios.post(url, stu);
+      if (response.status === 201) {
+        alert('Save Successfully!');
+        history.push('/student');
+      }
+    } catch (error) {
+      alert(`Failed to save student ${stu.firstName}`);
+    }
+*/
+    await addStudent(stu);
+    if (createStudentsError) {
+      alert('Save error!');
+    } else {
+      alert('Save Successfully!');
+      history.push('/student');
+    }
   }
 
-  async function updatedStudent1(stu) {
+
+  async function updatedStudent(stu) {
     const data = {};
     data['id'] = stu.id;
-    data['classCode'] = stu.classCode;
+    data['classCode'] = stu.classCode ? stu.classCode: stu?.trainingClass?.classCode;
     data['dateOfBirth'] = stu.dateOfBirth;
     data['firstName'] = stu.firstName;
     data['lastName'] = stu.lastName;
@@ -96,16 +96,21 @@ function StudentDetail(props) {
     // } catch (error) {
     //   alert(`Failed to save student ${stu.firstName}`);
     // }
-    updateStudent(data);
-    alert('Save Successfully!');
-    history.push('/student');
+    await updateStudent(data);
+    if (updateStudentsError) {
+      alert('Save error!');
+    } else {
+      alert('Save Successfully!');
+      history.push('/student');
+    }
   }
+  
 
   function save(e) {
     if (isCreate) {
       createStudent(e);
     } else {
-      updatedStudent1(e);
+      updatedStudent(e);
     }
   }
 
@@ -120,6 +125,10 @@ function StudentDetail(props) {
   function handleDateOfBirthChange(date) {
     setDob(date);
     setSt({...st, 'dateOfBirth': date});
+  }
+
+  function handleStudentChange(e) {
+    setSt({...st, [e.target.name]: e.target.value});
   }
 
   return (
