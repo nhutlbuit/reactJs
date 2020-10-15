@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import StudentDashBoard from './StudentDashBoard';
 import { Switch, Route, useHistory } from 'react-router-dom';
+import StudentDashBoard from './StudentDashBoard';
 import StudentDetail from './StudentDetail';
 
 function Student() {

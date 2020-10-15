@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { heroesReducer, selectedHeroReducer } from './hero.reducer';
 import { selectedVillainReducer, villainsReducer } from './villain.reducer';
 import { selectedStudentReducer, studentsReducer } from '../components/student/student.reducer';
+import StudentSliceReducer from '../components/studentNew/Student.slice'
 
 export * from './hero.actions';
 export * from './hero.reducer';
@@ -21,7 +22,8 @@ const store = combineReducers({
   students: studentsReducer,
   selectedStudent: selectedStudentReducer,
   selectedHero: selectedHeroReducer,
-  selectedVillain: selectedVillainReducer
+  selectedVillain: selectedVillainReducer,
+  studentsNew: StudentSliceReducer,
 });
 
 export default store;

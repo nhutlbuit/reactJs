@@ -9,6 +9,8 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import app, { heroSaga, villainSaga } from './store';
 import { studentSaga } from './components/student/student.saga';
+import 'bootstrap/dist/css/bootstrap.css';
+import { GetStudentsSaga } from './components/studentNew/Student.saga';
 
 // create and configure reduxer middleware ( saga is a middleware )
 const sagaMiddleware = createSagaMiddleware();
@@ -22,6 +24,7 @@ const store = createStore(
 sagaMiddleware.run(heroSaga);
 sagaMiddleware.run(villainSaga);
 sagaMiddleware.run(studentSaga);
+sagaMiddleware.run(GetStudentsSaga);
 
 ReactDOM.render(
   <Provider store={store}>

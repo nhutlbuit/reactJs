@@ -3,6 +3,7 @@ import Pagination from './Pagination';
 import SearchCriteria from './SearchCriteria';
 import { ModalYesNo } from '..';
 import useStudents from './useStudents';
+import { toast } from 'react-toastify';
 
 function StudentDashBoard(props) {
   const { editStudent, addNewStudent } = props;
@@ -26,7 +27,7 @@ function StudentDashBoard(props) {
   },[filter]);
 
   if (getStudentsError) {
-    alert('Failed to fetch data');
+    toast.error("Failed to fetch data. Please contact admin!");
   }
 
   /* 

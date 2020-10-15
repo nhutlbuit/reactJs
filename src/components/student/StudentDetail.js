@@ -4,6 +4,7 @@ import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import useStudents from './useStudents';
+import Button from 'react-bootstrap/Button';
 
 function StudentDetail(props) {
 
@@ -160,9 +161,9 @@ function StudentDetail(props) {
           <label className="label" htmlFor="stCode">Address</label>
           <input name = "address" className="input" type="text" defaultValue={st?.address}  placeholder= 'Address' onChange={handleStudentChange} /> 
     </div>
-    <button name ="save" onClick={() => save(st)}>Save</button>
+    <Button variant="success" name ="save" onClick={() => save(st)}>Save</Button >
     &nbsp;
-    <button name ="cancel" onClick={() => cancel()}>Cancel</button>
+    <Button variant="secondary" name ="cancel" onClick={() => cancel()}>Cancel</Button>
     </div>
   );
 }

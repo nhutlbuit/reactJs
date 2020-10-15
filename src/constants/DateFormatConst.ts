@@ -1,0 +1,31 @@
+/**
+ * _SLASH_ => Slash(/)
+ * _SPACE_ => Space( )
+ * _U**_ => Uppercase
+ * HYPHEN_  => Hyphen(-)
+ */
+const DateFormatConst = {
+    DEFAULT_TIME_ZONE: "America/Curacao",
+    TIME_ZONE: '-04:00',
+    UYYYY_UMM_UDD: "YYYYMMDD",
+    SPACE_UMMM_UDD_UYYYY: "MMM DD YYYY",
+    SPACE_UMMMM_UDD_UYYYY_UHH_MM_SS_AM: "MMMM DD YYYY HH:mm:ss A",
+    SPACE_UMMM_UDD_UYYYY_UHH_MM_SS_AM: "MMM DD YYYY HH:mm:ss A",
+    SLASH_UMM_UDD_UYYYY: "MM/DD/YYYY",
+    SLASH_DD_UMM_YYYY: "dd/MM/yyyy",
+    HYPHEN_UYYYY_UMM_UDD: "YYYY-MM-DD",
+    HYPHEN_UYYYY_UMM_UDD_UHH_MM_SS: "YYYY-MM-DD HH:mm:ss"
+}
+
+export const {
+    DEFAULT_TIME_ZONE,
+    TIME_ZONE,
+    UYYYY_UMM_UDD,
+    HYPHEN_UYYYY_UMM_UDD,
+    SLASH_UMM_UDD_UYYYY,
+    SPACE_UMMM_UDD_UYYYY,
+    SLASH_DD_UMM_YYYY,
+    HYPHEN_UYYYY_UMM_UDD_UHH_MM_SS,
+    SPACE_UMMMM_UDD_UYYYY_UHH_MM_SS_AM,
+    SPACE_UMMM_UDD_UYYYY_UHH_MM_SS_AM
+} = DateFormatConst

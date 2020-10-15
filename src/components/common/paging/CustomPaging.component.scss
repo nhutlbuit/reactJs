@@ -1,0 +1,37 @@
+.ct-paging {
+  font-size: 14px;
+  height: 36px;
+  background-image: linear-gradient(to bottom, #e7e7e7, #e6e6e6 24%, #dcdcdc 53%, #cccccc);
+
+  #current_page_no {
+    width: 48px;
+    text-align: center;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .page_size {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 4px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+  }
+
+  .text-muted {
+    cursor: not-allowed;
+  }
+
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
