@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalYesNo } from '..';
-import { DataTypeEnum, DEFAULT_PAGING, SortOrder } from '../../constants/constants';
-import { SPACE_UMMM_UDD_UYYYY } from '../../constants/DateFormatConst';
+import { DataTypeEnum, DEFAULT_PAGING, SortOrder } from '../../constants/constants.ts';
+import { SPACE_UMMM_UDD_UYYYY } from '../../constants/DateFormatConst.ts';
 import CustomPaging from '../common/paging/CustomPaging.component.tsx';
 import CustomTable from '../common/table/CustomTable.component.tsx';
 import { StudentSlice } from './Student.slice';
@@ -34,9 +34,9 @@ function StudentDashBoarNew(props) {
             sort: SortOrder.DEFAULT
         },
         {
-            id: 'tab_name',
+            id: 'trainingClass.className',
             header: 'Class',
-            accessor: 'trainingClass?.className',
+            accessor: 'trainingClass.className',
             minWidth: 150,
             sort: SortOrder.DEFAULT
         },
