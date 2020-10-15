@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { DataTypeEnum } from "../../../constants/constants";
 import { customFormatTzYMD } from "../../../constants/utils/DateUtils";
 
 const DefaultCell = (props: any) => {
     const {column, data} = props
-
-    const [itemName, setItemName] = useState<any>();
 
     const getDataCell = () => {
         return getDepsProperties(data, column.accessor);

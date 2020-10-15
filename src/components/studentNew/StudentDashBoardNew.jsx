@@ -34,7 +34,7 @@ function StudentDashBoarNew(props) {
             sort: SortOrder.DEFAULT
         },
         {
-            id: 'trainingClass.className',
+            id: 'className',
             header: 'Class',
             accessor: 'trainingClass.className',
             minWidth: 150,
