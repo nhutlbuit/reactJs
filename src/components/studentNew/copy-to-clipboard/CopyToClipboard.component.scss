@@ -1,0 +1,33 @@
+
+table {
+    position: absolute; 
+    left: -2000px;
+    top: -2000px;
+    width: 100%;
+    
+    thead {
+      padding: 2px 8px;
+      color: #fff;
+      line-height: 30px;
+      position: relative;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: inset 0 0 0 0 transparent;
+    }
+  
+    tbody {
+      tr:nth-child(even) {
+        background-color: white;
+      }
+    
+      tr:nth-child(odd) {      
+        background-color: #e1effd;
+      }
+    
+      th, td {
+        padding: 5px;
+        text-align: left;
+        border: 1px solid #ddd;
+      } 
+    }   
+}

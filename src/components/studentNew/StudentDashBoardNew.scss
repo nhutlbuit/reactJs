@@ -1,0 +1,45 @@
+.action {
+  margin-top: 20px;
+
+  .fa-file-excel {
+    color: green;
+  }
+  
+  .fa-file-pdf {
+    color: red;
+  }
+  
+  .fa-print {
+    color: #898c8e;
+  }
+  
+  .fa-copy {
+    color: #afb2b5;
+  }
+
+  .svg-inline--fa {
+    bottom: 4px;
+    position: relative;
+  }
+
+  .btn-light {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid #c0c0c0;
+    border-left: 0px solid transparent;
+    border-radius: 0px;
+    background: transparent;
+    background-color: transparent;
+    line-height: 2;
+    padding: 2px 10px 2px 10px;
+  }
+
+  .last {
+    border-right: 1px solid transparent;
+  }
+
+  .btn-light:hover {
+    background-color: #e2e2e2;
+    width: auto;
+  }
+}

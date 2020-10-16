@@ -9,12 +9,14 @@ import { StudentSlice } from './Student.slice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faFileExcel, faFilePdf, faPrint, faCopy, faCaretDown, faCaretRight} from "@fortawesome/free-solid-svg-icons";
 import SearchCriteria from '../student/SearchCriteria';
+import './StudentDashBoardNew.scss';
 
 function StudentDashBoarNew(props) {
   const { editStudent, addNewStudent } = props;
   const [showModal, setShowModal] = useState(false);
   const [studentToDelete, setStudentToDelete] = useState(null);
   const [columns, setColumns] = useState(initCols);
+  const [isNoRecordFound, setNoRecordFound] = useState(false);
 
   function initCols() {
     return [
@@ -87,8 +89,8 @@ function StudentDashBoarNew(props) {
   },[filter]);
 
   useEffect(() => {
-   // setFilter({...filter, totalRecords: page.totalElements, totalPages: page.number, pageNo: page.size, recordsPerPage: page.totalPages}) 
-   },[page]);
+    setNoRecordFound(students.length === 0);
+}, [students]);
 
   function onPageChange(f) {
     setFilter(f);
@@ -144,22 +146,56 @@ function StudentDashBoarNew(props) {
     )
 }
 
+const renderAction = () => {
   return (
-    <div >
-      <h1 className="dash-board">Dash Board</h1>
-      <SearchCriteria onSubmit={handleFilterChange} />
-      {renderTable()}
-      <CustomPaging filter={filter} onChange={onPageChange} totalPages={page.totalPages} totalRecords={page.totalElements}/>
-      {showModal && (
-        <ModalYesNo
-          message={`Would you like to delete ${studentToDelete.fullName}?`}
-          onNo={handleCloseModal}
-          onYes={handleDeleteFromModal}
-        />
-      )}
+      <div className="action">
+              <button type="button" className="btn btn-light" disabled={isNoRecordFound}>
+                  <FontAwesomeIcon icon={faFileExcel} size="lg"/> Export Excel
+              </button>
 
-    </div>
-  );
+              <button type="button" className="btn btn-light" disabled={isNoRecordFound}>
+                  <FontAwesomeIcon icon={faFilePdf} size="lg"/> Export PDF
+              </button>
+        
+              <button type="button" className="btn btn-light" onClick={copyToClipboard} placeholder='coppied!' disabled={isNoRecordFound}>
+                  <FontAwesomeIcon icon={faCopy} size="lg"/> Copy
+              </button>
+          
+              <button type="button" className="btn btn-light last" onClick={print} disabled={isNoRecordFound}>
+                  <FontAwesomeIcon icon={faPrint} size="lg"/> Print
+              </button> 
+      </div>
+  )
+}
+
+const copyToClipboard = (event) => {
+  event.preventDefault();
+  //setInitCopyComponent(true);
+  //setChangeCopyTrigger(hasChangeCopyTrigger + 1);
+}
+
+const print = () => { 
+//  setPrint(true);
+ // setChangePrintTrigger(hasChangePrintTrigger + 1);
+}
+
+return (
+  <div >
+    <h1 className="dash-board">Dash Board</h1>
+    <SearchCriteria onSubmit={handleFilterChange} />
+    {renderAction()}
+    {renderTable()}
+    <CustomPaging filter={filter} onChange={onPageChange} totalPages={page.totalPages} totalRecords={page.totalElements}/>
+    {showModal && (
+      <ModalYesNo
+        message={`Would you like to delete ${studentToDelete.fullName}?`}
+        onNo={handleCloseModal}
+        onYes={handleDeleteFromModal}
+      />
+    )}
+
+  </div>
+);
 }
 
 export default StudentDashBoarNew;
